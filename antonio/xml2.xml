@@ -1,24 +1,13 @@
-<pizza> ​
-       ​<Tamaño >
-           ​<pequeña precio="5€" ></pequeña>
-       ​</Tamaño>
-       ​<Tamaño >
-           ​<mediana precio="9€" ></mediana>
-       ​</Tamaño>
-       ​<Tamaño >
-           ​<grande precio="12€" ></grande>
-       ​</Tamaño>
-       ​
-       ​<ingrediente >
-           ​<pepperoni precio="3€" ></pepperoni>
-       ​</ingrediente>
-       ​<ingrediente>
-           ​<bacon precio="5€" ></bacon>
-       ​</ingrediente>
-       ​<ingrediente >
-           ​<piña precio="1€" ></piña>
-       ​</ingrediente>
-       ​<ingrediente >
-           ​<seisquesos precio="6€" ></seisquesos>
-       ​</ingrediente>
-</pizza>       
+<pizza>
+    <Tamaños>
+       <pequeña name="pequeña"  precio="5€" ></pequeña>
+       <mediana name="mediana"  precio="9€" ></mediana>
+       <grande name="grande"  precio="11€" ></grande>
+    </Tamaños>
+    <ingredientes>
+       <pepperoni name="pepperoni"   precio="4€"></pepperoni>    
+       <bacon name="bacon"  precio="4€" ></bacon>           
+       <piña name="piña"   precio="2€"></piña>  
+       <seisquesos name="seisquesos"   precio="2€"></seisquesos>  
+     </ingredientes>
+</pizza>    
