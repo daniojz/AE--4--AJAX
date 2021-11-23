@@ -8,6 +8,6 @@
        <pepperoni name="pepperoni"   precio="4€"></pepperoni>    
        <bacon name="bacon"  precio="4€" ></bacon>           
        <piña name="piña"   precio="2€"></piña>  
-       <seisquesos name="seisquesos"   precio="2€"></seisquesos>  
+       <seisquesos name="seisquesos"   precio="6€"></seisquesos>  
      </ingredientes>
 </pizza>    
