@@ -1,0 +1,43 @@
+{
+  "pizza": {
+    "Tamaño": [
+      {
+        "pequeña": {
+          "-precio": "5€"
+        }
+      },
+      {
+        "mediana": {
+          "-precio": "9€"
+        }
+      },
+      {
+        "grande": {
+          "-precio": "12€"
+        }
+      }
+    ],
+    "ingrediente": [
+      {
+        "pepperoni": {
+          "-precio": "3€"
+        }
+      },
+      {
+        "bacon": {
+          "-precio": "5€"
+        }
+      },
+      {
+        "piña": {
+          "-precio": "1€"
+        }
+      },
+      {
+        "seisquesos": {
+          "-precio": "6€"
+        }
+      }
+    ]
+  }
+}
