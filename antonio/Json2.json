@@ -1,36 +1,36 @@
 {
-    "pizza": {
-        "Tamaños": {
-            "pequeña": {
-                "-name": "pequeña",
-                "-precio": "5€"
-            },
-            "mediana": {
-                "-name": "mediana",
-                "-precio": "9€"
-            },
-            "grande": {
-                "-name": "grande",
-                "-precio": "11€"
-            }
+    "PIZZA": {
+      "TAMAÑOS": [
+        {
+            "tamaño": "Pequeña",
+            "precio": "5,00"
         },
-        "ingredientes": {
-            "pepperoni": {
-                "-name": "pepperoni",
-                "-precio": "4€"
-            },
-            "bacon": {
-                "-name": "bacon",
-                "-precio": "4€"
-            },
-            "piña": {
-                "-name": "piña",
-                "-precio": "2€"
-            },
-            "seisquesos": {
-                "-name": "seisquesos",
-                "-precio": "6€"
-            }
+        {
+            "tamaño": "mediana",
+            "precio": "10,00"
+        },
+        {
+            "tamaño": "grande",
+            "precio": "15,00"
         }
+            ],
+    "INGREDIENTES": [
+        {
+            "nombre": "pepperoni",
+            "precio": "0,20"
+        },
+        {
+            "nombre": "Bacon",
+            "precio": "0,60"
+        },
+        {
+            "nombre": "Piña",
+            "precio": "0,50"
+        },
+        {
+            "nombre": "6 Quesos",
+            "precio": "0,70"
+        }
+            ]
     }
 }
