@@ -1,6 +1,6 @@
 {
     "PIZZA": {
-      "TAMAÑOS": [
+      "TAMAÑO": [
         {
             "tamaño": "Pequeña",
             "precio": "5,00"
@@ -14,7 +14,7 @@
             "precio": "15,00"
         }
             ],
-    "INGREDIENTES": [
+    "INGREDIENTE": [
         {
             "nombre": "pepperoni",
             "precio": "0,20"
