@@ -21,71 +21,43 @@
 
   </head>
   <body>    
-    <div class="container">
-        <form id="formulario" class="m-4" action="URL">
-            <h1 class="d-flex justify-content-center">Pedir Pizza</h1>
-            <div class="row mt-3">
-                <div class="mt-3 col-md-6">
-                    <label for="nombre" class="form-label">Nombre:</label><br>
-                    <input type="text" id="nombre" name="nombre" class="form-control"><br>
-                </div>
-                <div class="mt-3 col-md-6">
-                    <label for="dirrecion" class="form-label">Dirrecion:</label><br>
-                    <input type="text" id="direccion" name="direccion" class="form-control"><br>
-                </div>
-                <div class="mt-2 col-md-4">
-                    <label for="telefono" class="form-label">Telefono:</label><br>
-                    <input type="text" id="telefono" name="telefono" class="form-control"><br>
-                </div>
-                <div class="mt-2 col-md-8">
-                    <label for="email" class="form-label">Email:</label><br>
-                    <input type="email" id="email" name="email" class="form-control"><br>
-                </div>
-            </div>
+    
+    <form class="pizza">
+      <title class="titulo">Crea tu pizza</title>
+      <div class="Tamaños">
+      
+          <input  type="radio" id="pequeña" name="tamaño" precio="5€">
+          <label id="pequeña" name="tamaño">Pequeña, precio= 5€</label>
 
-            <div class="row m-3">
-                <h5 class=" col-md-12 mt-5 mb-3">SELECCIONA TAMAÑO : </h5>
-                <div class="m-1 col-md-8">
-                    <input id="pequeña" type="radio" name="tamano" value="5">  
-                    <label for="pequeña">Pequeña: 5,00€</label>
-                </div>
-                <div class="m-1 col-md-8">
-                    <input id="mediana" type="radio" name="tamano" value="10"> 
-                    <label for="mediana">Mediana: 10,00€</label>
-                </div>
-                <div class="m-1 col-md-8">
-                    <input id="grande" type="radio" name="tamano" value="15"> 
-                    <label for="grande">Familiar: 15,00€</label>
-                </div>
-            </div>
+          <input  type="radio" id="mediana" name="tamaño" precio="9€">
+          <label id="mediana" name="tamaño">Mediana, precio= 9€</label>
+          
+          <input  type="radio" id="grande" name="tamaño" precio="11€">
+          <label id="grande" name="tamaño">Grande, precio= 11€</label>
+        
+        
 
-            <div class="row m-3">
-                <h5 class=" col-md-12 mt-5 mb-3">SELECCIONA UN INGREDIENTE: (cada ingrediente cuesta un 1€) </h5>
-                <div class="m-1 col-md-8">
-                    <input id="pepperoni" type="checkbox" name="ingrediente" value="1">    
-                    <label for="pepperoni">Pepperoni</label>
-                </div>
-                <div class="m-1 col-md-8">
-                    <input id="bacon" type="checkbox" name="ingrediente" value="1"> 
-                    <label for="bacon">Bacon</label>
-                </div>
-                <div class="m-1 col-md-8">
-                    <input id="piña" type="checkbox" name="ingrediente" value="1">
-                    <label for="piña">Piña</label>
-                </div>
-                <div class="m-1 col-md-8">
-                    <input id="seisquesos" type="checkbox" name="ingrediente" value="1"> 
-                    <label for="seisquesos">6 Quesos</label>
-                </div>
-            </div>
+      </div>
 
-            <div class="row d-flex justify-content-end m-3">
-                <button id="" type="submit" class="btn btn-primary">Pedir</button>
-            </div>
-          </form>
-    </div>
-    <br>
-    <br>
+      <div class="Ingredientes">
+        
+          <input  type="ckeckbox" id="pepperoni" name="ingrediente" precio="4€">
+          <label id="pepperoni" name="pepperoni">Pepperoni, precio= 4€</label>
 
-</body>
+          <input  type="ckeckbox" id="bacon" name="ingrediente" precio="4€">
+          <label id="bacon" name="bacon">Bacon, precio= 4€</label>
+          
+          <input  type="ckeckbox" id="piña" name="ingrediente" precio="2€">
+          <label id="piña" name="piña">Piña, precio= 2€</label>
+
+          <input  type="ckeckbox" id="seisquesos" name="ingrediente" precio="6€">
+          <label id="seisquesos" name="seisquesos">Seisquesos, precio= 6€</label>
+        
+        
+
+      </div>
+
+    </form>
+
+  </body>
 </html>
