@@ -1,0 +1,38 @@
+{
+  "PIZZA": {
+    "TAMAÑO": [
+      {
+          "tamaño": "Pequeña",
+          "precio": "5,00"
+      },
+      {
+          "tamaño": "mediana",
+          "precio": "10,00"
+      },
+      {
+          "tamaño": "grande",
+          "precio": "15,00"
+      }
+          ],
+  "INGREDIENTE": [
+      {
+          "nombre": "pepperoni",
+          "precio": "0,20"
+      },
+      {
+          "nombre": "Bacon",
+          "precio": "0,60"
+      },
+      {
+          "nombre": "Piña",
+          "precio": "0,50"
+      },
+      {
+          "nombre": "6 Quesos",
+          "precio": "0,70"
+      }
+          ]
+  }
+}
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="new.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <form id="formulario" action="URL">
+            <h1>Pedir Pizza</h1>
+            <div class="informacion-personal">
+                    <label for="nombre" class="form-label">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" class="form-control"><br>
+               
+                    <label for="dirrecion" class="form-label">Dirrecion:</label><br>
+                    <input type="text" id="direccion" name="direccion" class="form-control"><br>
+                
+                    <label for="telefono" class="form-label">Telefono:</label><br>
+                    <input type="text" id="telefono" name="telefono" class="form-control"><br>
+                
+                    <label for="email" class="form-label">Email:</label><br>
+                    <input type="email" id="email" name="email" class="form-control"><br>
+            </div>
+
+            <div id="tamaños" class="pizza">
+                <h5>SELECCIONA TAMAÑO : </h5>
+                
+            </div>
+
+            <div id="ingredientes" class="pizza">
+                <h5>SELECCIONA UN INGREDIENTE: (cada ingrediente cuesta un 1€) </h5>
+                
+            </div>
+            <br>
+           
+                <button id="botonSubmit" type="submit">Pedir</button>
+            
+          </form>
+    </div>
+</body>
+</html>
