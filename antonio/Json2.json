@@ -1,22 +1,22 @@
 {
     "PIZZA": {
-      "TAMAÑO": [
+      "TAMANO": [
         {
-            "tamaño": "Pequeña",
+            "tamano": "Pequeña",
             "precio": "5,00"
         },
         {
-            "tamaño": "mediana",
+            "tamano": "Mediana",
             "precio": "10,00"
         },
         {
-            "tamaño": "grande",
+            "tamano": "Grande",
             "precio": "15,00"
         }
             ],
     "INGREDIENTE": [
         {
-            "nombre": "pepperoni",
+            "nombre": "Pepperoni",
             "precio": "0,20"
         },
         {

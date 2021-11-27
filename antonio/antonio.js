@@ -1,4 +1,6 @@
-
+window.onload=function(){
+        enviarAsincrona();
+}
 
 function enviarAsincrona (){
     let xmlHttp= new XMLHttpRequest();
@@ -12,124 +14,57 @@ function enviarAsincrona (){
             }
         }
     }
-}
-xmlHttp.open('GET', URL_DESTINO, true)
+xmlHttp.open('GET', "http://127.0.0.1:5500/antonio/Json2.json", true)
 xmlHttp.send(null);
 
-function procesarRespuesta(){
 
-    var objetoJson= Json.parse(Json2);
+}
 
-     // TAMAÑO + PRECIO //
 
-    let f= document.createElement("form")
-            f.setAttribute ("class", "pizza")
-    let t= document.createElement("title")
-             t.setAttribute ("class", "titulo")
-    let d= document.createElement("div")
-            d.setAttribute("class", "Tamaños")
-    let i=document.createElement("input")
-            i.setAttribute ("type", "radio")
-            i.setAttribute ("id", "pequeña")
-            i.setAttribute ("name", "pequeña")
-            i.setAttribute ("precio", "5€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
 
-            d.appendChild(i)
+function procesarRespuesta(json){
 
-            f.appendChild(d)
-            f.appendChild(t)
+    var objetoJson= JSON.parse(json);
+    var tamanos = objetoJson.PIZZA.TAMANO;
+    var ingredientes= objetoJson.PIZZA.INGREDIENTE;
+
+    console.log (tamanos)
+     
+    // TAMAÑO + PRECIO //
     
-      
-    let i=document.createElement("input")
-            i.setAttribute ("type", "radio")
-            i.setAttribute ("id", "mediana")
-            i.setAttribute ("name", "mediana")
-            i.setAttribute ("precio", "9€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
+    
+      for (let index = 0; index < tamanos.length ; index++) {
+        let l=document.createElement("label")
+        let i=document.createElement("input")
+                i.setAttribute ("type", "radio")
+                i.setAttribute ("id", tamanos[index].tamano+index)
+                i.setAttribute ("name", "tamanos")
+        let texto= document.createTextNode(tamanos[index].tamano + " : " + tamanos[index].precio)
+                l.appendChild(texto)
+                
+                document.getElementById("Tamaños").appendChild(i)
+                document.getElementById("Tamaños").appendChild(l)
+          
+      }
+              // INGREDIENTES + PRECIO//
+    
 
-            d.appendChild(i)
+      for (let index = 0; index < ingredientes.length ; index++) {
+        let l=document.createElement("label")
+        let i=document.createElement("input")
+                i.setAttribute ("type", "checkbox")
+                i.setAttribute ("id", ingredientes[index].ingredientes+index)
+                i.setAttribute ("name", "ingredientes")
+        let texto= document.createTextNode(ingredientes[index].nombre + " : " + ingredientes[index].precio)
+                l.appendChild(texto)
+                
+                document.getElementById("Ingredientes").appendChild(i)
+                document.getElementById("Ingredientes").appendChild(l)
+          
+      }
 
-            f.appendChild(d)
-            f.appendChild(t)    
-            
-            
-            
-            let i=document.createElement("input")
-            i.setAttribute ("type", "radio")
-            i.setAttribute ("id", "grande")
-            i.setAttribute ("name", "grande")
-            i.setAttribute ("precio", "11€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
+    
 
-            d.appendChild(i)
-
-            f.appendChild(d)
-            f.appendChild(t)  
-
-
-            // INGREDIENTES + PRECIO//
-
-    let d= document.createElement("div")
-            d.setAttribute("class", "Ingredientes")
-    let i=document.createElement("input")
-            i.setAttribute ("type", "checkbox")
-            i.setAttribute ("id", "pepperoni")
-            i.setAttribute ("name", "pepperoni")
-            i.setAttribute ("precio", "4€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
-
-            d.appendChild(i)
-
-            f.appendChild(d)
-            f.appendChild(t)
-
-
-    let d= document.createElement("div")
-            d.setAttribute("class", "Ingredientes")
-    let i=document.createElement("input")
-            i.setAttribute ("type", "checkbox")
-            i.setAttribute ("id", "bacon")
-            i.setAttribute ("name", "bacon")
-            i.setAttribute ("precio", "4€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
-
-            d.appendChild(i)
-
-            f.appendChild(d)
-            f.appendChild(t)
-
-    let d= document.createElement("div")
-            d.setAttribute("class", "Ingredientes")
-    let i=document.createElement("input")
-            i.setAttribute ("type", "checkbox")
-            i.setAttribute ("id", "piña")
-            i.setAttribute ("name", "piña")
-            i.setAttribute ("precio", "4€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
-            d.appendChild(i)
-            f.appendChild(d)
-            f.appendChild(t)
-
-
-    let d= document.createElement("div")
-            d.setAttribute("class", "Ingredientes")
-    let i=document.createElement("input")
-            i.setAttribute ("type", "checkbox")
-            i.setAttribute ("id", "seisquesos")
-            i.setAttribute ("name", "seisquesos")
-            i.setAttribute ("precio", "4€")
-    let texto = document.createTextNode(objetoJson.tamaño)
-            i.appendChild(texto)
-            d.appendChild(i)
-            f.appendChild(d)
-            f.appendChild(t)
 
 
     
