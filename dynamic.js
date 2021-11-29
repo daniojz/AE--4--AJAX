@@ -20,8 +20,6 @@ function cargarDatos(){
 
 }
 
-
-
 function mostrarDatos(jsonText){
 
     var json= JSON.parse(jsonText);
@@ -56,8 +54,7 @@ function mostrarDatos(jsonText){
 
 }
 
-
-function crearElementoInput(type, id, name){
+function crearElementoInput(type, id, name){ //funcion para crear los elementos que contendran input y label para los ingredientes y tamaños.
 
     let container=document.createElement("div")
     let label=document.createElement("label")
