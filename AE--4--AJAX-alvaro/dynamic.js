@@ -15,7 +15,7 @@ function cargarDatos(){
             }
         }
     }
-    xmlHttp.open('GET', "http://192.168.162.1:5500/AE--4--AJAX/data.json", true)
+    xmlHttp.open('GET', "http://127.0.0.1:5500/AE--4--AJAX/AE--4--AJAX-alvaro/data.json", true)
     xmlHttp.send(null);
 
 }
@@ -87,36 +87,30 @@ function crearElementoInput(type, id, name){
 
 
 function precio(){
-    precio = 0;
+    let precio = 0;
     let radioTamano = document.getElementsByName("tamano")
     radioTamano.forEach(element => {
         if(element.checked){
-            precio += element.precio
+            precio += parseFloat(element.getAttribute("precio"))
             //seleccionar el tamaño y sumar;
         }
     });
     let checkIngredientes = document.getElementsByName("ingrediente")
     checkIngredientes.forEach(element => {
         if(element.checked){
-            precio += element.precio
+            precio += parseFloat(element.getAttribute("precio"))
                 //seleccionar el ingrediente y sumar;
         }
     })    
+    alert("Precio total: " + precio)
     return precio
 }
 
 function recargar(){
-    //Se recorren y se borran los elementos previamente creados
-    let radioTamano = document.getElementsByName("tamano")
-    radioTamano.forEach(element => {
-        padre = element.parentNode;
-        padre.removeChild(element);
-    });
-    let checkIngredientes = document.getElementsByName("ingrediente")
-    checkIngredientes.forEach(element => {
-        padre = element.parentNode;
-        padre.removeChild(element);
-    })    
+
+    document.getElementById("ingredientes").innerHTML = ""
+    document.getElementById("tamaños").innerHTML = ""
+
     //Se cargan de nuevo los datos
     cargarDatos()
 }
