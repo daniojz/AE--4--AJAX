@@ -37,7 +37,9 @@ function mostrarDatos(jsonText){
         let texto = document.createTextNode(tamanos[index].tamaño + ": " + tamanos[index].precio)
 
         elementoTamaño.childNodes[0].value = tamanos[index].tamaño;
-        elementoTamaño.childNodes[0].precio = tamanos[index].precio;
+        let atr = document.createAttribute("precio");
+        atr.value = tamanos[index].precio;
+        elementoTamaño.childNodes[0].setAttributeNode(atr);
         elementoTamaño.childNodes[1].appendChild(texto)
 
         document.getElementById("tamaños").appendChild(elementoTamaño);
@@ -50,7 +52,9 @@ function mostrarDatos(jsonText){
         let texto = document.createTextNode(ingredientes[index].nombre + ": " + ingredientes[index].precio)
 
         elementoIngrediente.childNodes[0].value = ingredientes[index].nombre;
-        elementoIngrediente.childNodes[0].precio = ingredientes[index].precio;
+        let atr = document.createAttribute("precio");
+        atr.value = ingredientes[index].precio;
+        elementoIngrediente.childNodes[0].setAttributeNode(atr);
         elementoIngrediente.childNodes[1].appendChild(texto);
 
         document.getElementById("ingredientes").appendChild(elementoIngrediente);
@@ -88,7 +92,7 @@ function precio(){
     radioTamano.forEach(element => {
         if(element.checked){
             precio += element.precio
-            //seleccionar el precio y sumar;
+            //seleccionar el tamaño y sumar;
         }
     });
     let checkIngredientes = document.getElementsByName("ingrediente")
@@ -99,5 +103,21 @@ function precio(){
         }
     })    
     return precio
+}
+
+function recargar(){
+    //Se recorren y se borran los elementos previamente creados
+    let radioTamano = document.getElementsByName("tamano")
+    radioTamano.forEach(element => {
+        padre = element.parentNode;
+        padre.removeChild(element);
+    });
+    let checkIngredientes = document.getElementsByName("ingrediente")
+    checkIngredientes.forEach(element => {
+        padre = element.parentNode;
+        padre.removeChild(element);
+    })    
+    //Se cargan de nuevo los datos
+    cargarDatos()
 }
 
