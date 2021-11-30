@@ -8,8 +8,6 @@ $(document).ready(function(){
 
 function cargarDatos(){
 
-    let xmlHttp= new XMLHttpRequest();
-
     $.ajax({
         'type'  : 'GET', 
         'url'   : "http://127.0.0.1:5500/AE--4--AJAX/data.json",
@@ -27,6 +25,7 @@ function mostrarDatos(jsonText){
     var json= jsonText;
     var tamanos = json.PIZZA.TAMANOS;
     var ingredientes= json.PIZZA.INGREDIENTES;
+    console.log(tamanos)
 
     // TAMAÑO + PRECIO //
     for (let index = 0; index < tamanos.length ; index++) {
@@ -81,6 +80,45 @@ function crearElementoInput(type, id, name){
     return container
 }
 
+
+
+function procesarPedido(){
+
+    $.ajax({
+        'type'  : 'GET', 
+        'url'   : "http://127.0.0.1:5500/AE--4--AJAX/data.json",
+        'async' : true,
+    }
+    ).done(function(jsonText){
+
+        let precioTotal = 0;
+        let tamaños = jsonText.PIZZA.TAMANOS
+        let ingredientes = jsonText.PIZZA.INGREDIENTES
+
+        let selectedObject;
+
+        $("[name='ingrediente']").forEach(tamaño => {
+            if (tamaño.checked){
+                tamaños.forEach(element => { //se recorre con un foreach los tamaños del json
+                    if (element.tamaño == tamaño.value) {
+                        precioTotal = precioTotal + parseFloat(element.precio)
+                    }
+                })       
+            }
+        })
+
+        $("[name='tamano']").forEach(ingrediente => {
+            if (ingrediente.checked){
+                selectedObject = ingredientes.find(element => element.nombre == ingrediente.value); //forma acortada con funcion find, en vez de recorrer con un bucle todos los ingredientes
+                precioTotal = precioTotal + parseFloat(selectedObject.precio)
+            }
+        })
+
+        alert("PRECIO TOTAL: " + precioTotal);
+        
+    })
+    .fail(alert("ERROR!"))
+}
 
 
 function precio(){
