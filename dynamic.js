@@ -1,5 +1,8 @@
 window.onload=function(){
     cargarDatos();
+
+    document.getElementById("formulario").onsubmit = precio
+    document.getElementById("refrescar").onclick = recargar
 }
 
 function cargarDatos(){
@@ -25,8 +28,6 @@ function mostrarDatos(jsonText){
     var json= JSON.parse(jsonText);
     var tamanos = json.PIZZA.TAMANOS;
     var ingredientes= json.PIZZA.INGREDIENTES;
-
-    console.log(json.PIZZA.TAMANOS)
     
     // TAMAÑO + PRECIO //
     for (let index = 0; index < tamanos.length ; index++) {
@@ -35,6 +36,9 @@ function mostrarDatos(jsonText){
         let texto = document.createTextNode(tamanos[index].tamaño + ": " + tamanos[index].precio)
 
         elementoTamaño.childNodes[0].value = tamanos[index].tamaño;
+        let atr = document.createAttribute("precio");
+        atr.value = tamanos[index].precio;
+        elementoTamaño.childNodes[0].setAttributeNode(atr);
         elementoTamaño.childNodes[1].appendChild(texto)
 
         document.getElementById("tamaños").appendChild(elementoTamaño);
@@ -47,12 +51,16 @@ function mostrarDatos(jsonText){
         let texto = document.createTextNode(ingredientes[index].nombre + ": " + ingredientes[index].precio)
 
         elementoIngrediente.childNodes[0].value = ingredientes[index].nombre;
-        elementoIngrediente.childNodes[1].appendChild(texto)
+        let atr = document.createAttribute("precio");
+        atr.value = ingredientes[index].precio;
+        elementoIngrediente.childNodes[0].setAttributeNode(atr);
+        elementoIngrediente.childNodes[1].appendChild(texto);
 
         document.getElementById("ingredientes").appendChild(elementoIngrediente);
     }
 
 }
+
 
 function crearElementoInput(type, id, name){ //funcion para crear los elementos que contendran input y label para los ingredientes y tamaños.
 
@@ -73,4 +81,36 @@ function crearElementoInput(type, id, name){ //funcion para crear los elementos 
     container.appendChild(label)
 
     return container
+}
+
+function precio(){
+    let precio = 0;
+    let radioTamano = document.getElementsByName("tamano")
+    console.log(radioTamano)
+    radioTamano.forEach(element => {
+        if(element.checked){
+            precio += parseFloat(element.getAttribute("precio"))
+            //seleccionar el tamaño y sumar;
+        }
+    });
+    let checkIngredientes = document.getElementsByName("ingrediente")
+    checkIngredientes.forEach(element => {
+        if(element.checked){
+            precio += parseFloat(element.getAttribute("precio"))
+                //seleccionar el ingrediente y sumar;
+        }
+    })    
+    alert("Precio total: " + precio)
+    return precio
+}
+
+function recargar(){
+
+    console.log("hey")
+
+    document.getElementById("ingredientes").innerHTML = ""
+    document.getElementById("tamaños").innerHTML = ""
+
+    //Se cargan de nuevo los datos
+    cargarDatos()
 }
